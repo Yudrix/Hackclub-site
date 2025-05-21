@@ -213,23 +213,63 @@ function Page({
               textShadow: 'text'
             }}
           >
+            <Box
+             sx={{
+              textAlign: 'center',
+              width: '100%',
+              mb: [3,4]
+             }}>
             <Text
-              variant="ultratitle"
+              variant="title"
               sx={{
                 color: 'white',
                 mb: [3,4],
                 pb: 2,
                 textAlign: 'center',
                 position: 'relative',
-                display: 'block',
                 lineHeight: 1.2,
-                fontSize: ['80px', '60px', '90px']
+                display: 'inline'
               }}
               as="h4"
             >
-              Like to code?
+              Like to{''}
             </Text>
+
+            <Text 
+              variant="title"
+              sx={{
+                  borderRadius: 'default',
+                  px: 1,
+                  mx: 0,
+                  whiteSpace: ['wrap', 'nowrap', 'nowrap'],
+                  px: 2,
+                  color: 'white',
+                  background: theme => theme.util.gx('#ffffff', 'rgb(156, 156, 156)'),
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  display: 'inline'
+              }}
+              as="span">
+              code?
+              </Text>
+              </Box>
+
+              <Box
+              sx={{
+                textAlign: 'center',
+                width: '100%',
+                mb: [3,4]
+              }}>
+                
+              </Box>
+
             <Heading>
+              <Box 
+              sx={{
+                textAlign:'center',
+                width: '100%',
+                mb: [3,4]
+              }}>
               <Text
                 as="p"
                 variant="title"
@@ -237,7 +277,7 @@ function Page({
                   color: 'white',
                   mb: [3, 4],
                   zIndex: 1,
-                  textAlign: 'left',
+                  textAlign: 'center',
                   fontSize: ['42px', '52px', '64px'],
                   lineHeight: 1.2,
                   width: '100%'
@@ -266,6 +306,7 @@ function Page({
                       color: 'white',
                       whiteSpace: 'nowrap',
                       textDecoration: 'none',
+                      textAlign: 'center',
                       '&:hover': {
                         cursor: 'pointer'
                       }
@@ -279,6 +320,7 @@ function Page({
                 <br sx={{ display: ['inline', 'none', 'none'] }} /> from around
                 the world who code together
               </Text>
+              
               <Button
                 variant="ctaLg"
                 as="a"
@@ -301,6 +343,7 @@ function Page({
               >
                 Sign Up: Private Island Hackathon
               </Button>
+              </Box>
             </Heading>
           </Box>
           <Box
