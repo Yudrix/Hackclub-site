@@ -214,16 +214,20 @@ function Page({
             }}
           >
             <Text
-              variant="eyebrow"
+              variant="ultratitle"
               sx={{
-                color: 'sunken',
+                color: 'white',
+                mb: [3,4],
                 pb: 2,
+                textAlign: 'center',
                 position: 'relative',
-                display: 'block'
+                display: 'block',
+                lineHeight: 1.2,
+                fontSize: ['80px', '60px', '90px']
               }}
               as="h4"
             >
-              Welcome to Hack&nbsp;Club
+              Like to code?
             </Text>
             <Heading>
               <Text
@@ -288,7 +292,7 @@ function Page({
               <Button
                 variant="ctaLg"
                 as="a"
-                href="https://shipwrecked.hack.club/3"
+                href="https://shipwrecked.hack.club/119"
                 mt={3}
                 sx={{ 
                   transformOrigin: 'left',
@@ -1121,6 +1125,60 @@ function Page({
               </Card>
             </Grid>
           </Box>
+        </Box>
+
+        {/* Smudgey gradient stats section */}
+        <Box
+          sx={{
+            width: '100%',
+            minHeight: ['120px', '160px', '180px'],
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: [3, 5, 6],
+            mt: [4, 5, 6],
+            mb: [4, 5, 6],
+            position: 'relative',
+            zIndex: 2,
+            background: 'none',
+            overflow: 'visible',
+            '::before': {
+              content: '""',
+              position: 'absolute',
+              top: '-32px',
+              left: 0,
+              width: '100%',
+              height: 'calc(100% + 64px)',
+              zIndex: -1,
+              background:
+                'radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.95) 0%, rgba(236,55,80,0.18) 60%, rgba(51,214,166,0.12) 100%)',
+              filter: 'blur(16px)',
+              opacity: 1,
+              pointerEvents: 'none',
+              transition: 'opacity 0.4s'
+            },
+            borderRadius: '0 0 48px 48px',
+            boxShadow: '0 8px 32px 0 rgba(0,0,0,0.08)'
+          }}
+        >
+          <Flex sx={{gap: [4, 5, 6], width: '100%', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
+            <Box sx={{textAlign: 'center', minWidth: '120px'}}>
+              <Text as="span" sx={{fontSize: ['32px','48px','64px'], fontWeight: 'bold', color: 'red'}}>+{slackData.total_members_count}</Text>
+              <Text as="div" sx={{fontSize: ['16px','18px','20px'], color: 'black', opacity: 0.7}}>Members</Text>
+            </Box>
+            <Box sx={{textAlign: 'center', minWidth: '120px'}}>
+              <Text as="span" sx={{fontSize: ['32px','48px','64px'], fontWeight: 'bold', color: 'orange'}}>+400</Text>
+              <Text as="div" sx={{fontSize: ['16px','18px','20px'], color: 'black', opacity: 0.7}}>Clubs</Text>
+            </Box>
+            <Box sx={{textAlign: 'center', minWidth: '120px'}}>
+              <Text as="span" sx={{fontSize: ['32px','48px','64px'], fontWeight: 'bold', color: 'green'}}>+100</Text>
+              <Text as="div" sx={{fontSize: ['16px','18px','20px'], color: 'black', opacity: 0.7}}>Hackathons</Text>
+            </Box>
+            <Box sx={{textAlign: 'center', minWidth: '120px'}}>
+              <Text as="span" sx={{fontSize: ['32px','48px','64px'], fontWeight: 'bold', color: 'blue'}}>{bankData[0]}</Text>
+              <Text as="div" sx={{fontSize: ['16px','18px','20px'], color: 'black', opacity: 0.7}}>Raised</Text>
+            </Box>
+          </Flex>
         </Box>
 
         {new URL(asPath, 'http://example.com').searchParams.get('gen') ===
